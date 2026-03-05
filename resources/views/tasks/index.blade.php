@@ -66,12 +66,12 @@
                                 data-status="{{ $task->status }}"
                                 data-due-date="{{ $task->due_date?->format('Y-m-d') }}"
                                 data-reminder-time="{{ $task->reminder_time?->format('Y-m-d\TH:i') }}">
-                                <i class="bi bi-pencil"></i>
+                                <i class="bi bi-pencil"></i> edit
                             </button>
                             <form action="{{ route('tasks.destroy', $task) }}" method="POST" class="d-inline task-delete-form">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-outline-danger btn-sm"><i class="bi bi-trash"></i></button>
+                                <button type="submit" class="btn btn-outline-danger btn-sm"><i class="bi bi-trash"></i> delete</button>
                             </form>
                         </td>
                     </tr>

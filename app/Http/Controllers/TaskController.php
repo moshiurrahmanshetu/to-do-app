@@ -42,6 +42,13 @@ class TaskController extends Controller
         return view('tasks.create');
     }
 
+    public function show(Task $task): View
+    {
+        $this->authorizeTask($task);
+
+        return view('tasks.show', compact('task'));
+    }
+
     public function store(Request $request): RedirectResponse
     {
         $validated = $request->validate([
